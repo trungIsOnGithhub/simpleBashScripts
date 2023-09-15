@@ -1,16 +1,12 @@
 #!/bin/bash
 # weather.sh
-# Copyright 2018 computer-geek64. All rights reserved.
 
-program=Weather
+program=weather
 version=1.1
-year=2018
-developer=computer-geek64
 
 case $1 in
 -h | --help)
-	echo "$program $version"
-	echo "Copyright $year $developer. All rights reserved."
+	echo "$program -v $version"
 	echo
 	echo "Usage: weather [options]"
 	echo "Option          Long Option             Description"
@@ -18,9 +14,7 @@ case $1 in
 	echo "-l [location]   --location [location]   Specifies the location"
 	;;
 -l | --location)
-	curl https://wttr.in/$2
-	;;
+	curl https://wttr.in/$2;;
 *)
-	curl https://wttr.in
-	;;
+	curl https://wttr.in;;
 esac
